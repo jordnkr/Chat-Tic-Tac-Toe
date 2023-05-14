@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            max-width: 80vw;
+            margin: 0 auto;
+        }
+
+        .cell {
+            background-color: #fff;
+            border: 1px solid #000;
+            padding-bottom: 100%;
+            position: relative;
+        }
+
+        .cell:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cell:hover:after {
+            opacity: 1;
+        }
+
+        .symbol {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            pointer-events: none;
+        }
+
+        .status {
+            margin: 20px;
+            font-size: 1.5rem;
+        }
+
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div class="status">Player 1's turn (X)</div>
+        <div class="board">
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+            <div class="cell"><span class="symbol"></span></div>
+        </div>
+        <button class="reset">Reset Game</button>
+        <div class="winner hidden">Player 1 wins!</div>
+        <button class="playAgain hidden">Play Again</button>
+</div>
+
+</body>
+</html>
